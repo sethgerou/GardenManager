@@ -1,3 +1,4 @@
 class Manager < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :zipcode, presence: true
+  validates :name, presence: true, uniqueness: true
 end
