@@ -1,0 +1,32 @@
+body {
+  background-color: green;
+}
+
+.window {
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  height: 1200px;
+  background-color: green;
+  border: 2px solid white;
+  border-radius: 5%;
+  color: white;
+  font-family: sans-serif;
+  transform: translate(0, 10%);
+}
+
+.rounded_button {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid white;
+  color: green;
+  font-family: sans-serif;
+  font-size: 2em
+}
+
+.manager_form {
+  
+}
