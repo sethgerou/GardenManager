@@ -1,0 +1,20 @@
+
+<div id="current-state">
+<br>
+<h1>Current Manager State</h1>
+<br>
+<h1>zipcode: <%= @manager.zipcode %></h1>
+<h1>mode: <%= @manager.mode %></h1>
+<h1>vent_open_temp: <%= @manager.roof_open_temp %></h1>
+<h1>vent_close_temp: <%= @manager.roof_close_temp %></h1>
+
+<% if @manager.logs %>
+   <h1>current temp: <%= @manager.logs.last.temp %></h1>
+   <h1>current humidity: <%= @manager.logs.last.humidity %></h1>
+   <h1>current ambient light: <%= @manager.logs.last.light %></h1>
+   <h1>current state: <%= @manager.logs.last.actuator_state %></h1>
+<% end %>
+
+<button id="edit_manager_settings" class="rounded_button" type="button" name="edit_settings">edit settings</button>
+<br><br>
+</div>

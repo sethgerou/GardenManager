@@ -1,3 +1,3 @@
 class Log < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :manager
 end

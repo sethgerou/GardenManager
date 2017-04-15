@@ -1,6 +1,8 @@
 <div class="window">
-  <h1>Welcome to Garden Manager</h1><br>
+  <br>
+  <h1>Welcome to Greenhouse Manager</h1><br>
   <button id="add_manager" class="rounded_button" type="button" name="new_manager">make a new manager</button>
+<div class="edit">
 
 <div id="add_manager_form_container">
   <br><br>
@@ -17,15 +19,15 @@
     <br>
   <button id="view_manager" class="rounded_button" type="button" name="view_manager">view a manager</button>
 
-
-  <form id="view_manager_form" class="hidden" action="index.html" method="post">
+  <form id="view_manager_form" class="hidden" action="/managers" method="get">
     <br>
     <input class="form_field" type="text" name="name" placeholder="Manager Name">
     <br>
-    <input class="form_field" type="text" name="name" placeholder="Manager Key">
+    <input class="form_field" type="text" name="key" placeholder="Manager Key">
     <br>
     <input class="form_field" type="submit">
   </form>
+</div>
 
 
 </div>

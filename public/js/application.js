@@ -18,5 +18,28 @@ $(document).ready(function() {
     event.preventDefault();
     $('#view_manager_form').slideToggle("fast")
   })
-  
+  $('#view_manager_form').on("submit", function(event){
+    event.preventDefault();
+    selectManager = $(event.target).serialize()
+    $.ajax({
+      url: '/managers',
+      type: 'get',
+      data: selectManager
+    }).done(function(response){
+      $('#add_manager').hide()
+      $('#view_manager').hide()
+      $('#view_manager_form').hide()
+      $('#edit_manager_settings').toggleClass("hidden")
+      $('#add_manager_form_container').html(response)
+    })
+  })
+  $('.edit').on("click", "#edit_manager_settings", function(event){
+    event.preventDefault();
+    $.ajax({
+      url: '/managers/edit',
+      type: 'get'
+    }).done(function(response){
+      $('#add_manager_form_container').html(response)
+    })
+  })
 });

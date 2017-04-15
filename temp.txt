@@ -1,0 +1,6 @@
+<% if @manager.logs %>
+   <h1>current temp: <%= @manager.logs.last.temp %></h1>
+   <h1>current humidity: <%= @manager.logs.last.humidity %></h1>
+   <h1>current ambient light: <%= @manager.logs.last.light %></h1>
+   <h1>current state: <%= @manager.logs.last.actuator_state %></h1>
+<% end %>

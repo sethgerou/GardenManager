@@ -1,0 +1,12 @@
+<form class="manager_form" action="managers" method="post">
+  <input type="hidden" name="_method" value="put" />
+  <label>zipcode</label>
+  <input type="text" name="zipcode" value="<%= @manager.zipcode %>"><br>
+  <label>mode</label>
+  <input type="text" name="mode" value="<%= @manager.mode %>"><br>
+  <label>vent open temp</label>
+  <input type="text" name="roof_open_temp" value="<%= @manager.roof_open_temp %>"><br>
+  <label>vent close temp</label>
+  <input type="text" name="roof_close_temp" value="<%= @manager.roof_close_temp %>"><br><br>
+  <input type="submit">
+</form>
