@@ -1,4 +1,11 @@
 <div>
+  <% if @manager.errors %>
+    <% @manager.errors.full_messages.each do |error| %>
+      <p>
+        <%= error %>
+      </p>
+    <% end %>
+  <% end %>
   <form class="manager_form" action="/managers/<%=@manager.id%>" method="post">
   <input type="hidden" name="_method" value="put" />
     <div class="form_field_container">
