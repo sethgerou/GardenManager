@@ -1,12 +1,31 @@
-<form class="manager_form" action="managers" method="post">
+<div>
+  <% if @manager.errors %>
+    <% @manager.errors.full_messages.each do |error| %>
+      <p>
+        <%= error %>
+      </p>
+    <% end %>
+  <% end %>
+  <form class="manager_form" action="/managers/<%=@manager.id%>" method="post">
   <input type="hidden" name="_method" value="put" />
-  <label>zipcode</label>
-  <input type="text" name="zipcode" value="<%= @manager.zipcode %>"><br>
-  <label>mode</label>
-  <input type="text" name="mode" value="<%= @manager.mode %>"><br>
-  <label>vent open temp</label>
-  <input type="text" name="roof_open_temp" value="<%= @manager.roof_open_temp %>"><br>
-  <label>vent close temp</label>
-  <input type="text" name="roof_close_temp" value="<%= @manager.roof_close_temp %>"><br><br>
-  <input type="submit">
+    <div class="form_field_container">
+      <label>zipcode</label>
+      <input class="green" type="text" name="zipcode" value="<%= @manager.zipcode %>">
+    </div>
+    <div class="form_field_container">
+      <label>mode</label>
+      <input class="green" type="text" name="mode" value="<%= @manager.mode %>">
+    </div>
+    <div class="form_field_container">
+      <label>vent open temp</label>
+      <input class="green" type="text" name="roof_open_temp" value="<%= @manager.roof_open_temp %>">
+    </div>
+    <div class="form_field_container">
+      <label>vent close temp</label>
+      <input class="green" type="text" name="roof_close_temp" value="<%= @manager.roof_close_temp %>">
+    </div>
+    <div>
+      <input class="rounded_button" type="submit" value="submit">
+    </div>
 </form>
+<div>

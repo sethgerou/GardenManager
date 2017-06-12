@@ -1,33 +1,44 @@
-<div class="window">
-  <br>
-  <h1>Welcome to Greenhouse Manager</h1><br>
-  <button id="add_manager" class="rounded_button" type="button" name="new_manager">make a new manager</button>
-<div class="edit">
-
-<div id="add_manager_form_container">
-  <br><br>
-  <form id="show-new-manager" class="manager_form hidden" action="/managers" method="post">
-    <br>
-    <input class="form_field" type="text" name="name" placeholder="New Manager Name" >
-    <br>
-    <input class="form_field" type="text" pattern="[0-9]{5}" name="zipcode" placeholder="Zip Code">
-    <br>
-    <input class="form_field" type="submit">
-    <br>
-  </form>
+<div class="header">
+  <a href="/">
+    <div class="welcome">
+      <h1>GREENHOUSE MANAGER</h1>
     </div>
-    <br>
-  <button id="view_manager" class="rounded_button" type="button" name="view_manager">view a manager</button>
-
-  <form id="view_manager_form" class="hidden" action="/managers" method="get">
-    <br>
-    <input class="form_field" type="text" name="name" placeholder="Manager Name">
-    <br>
-    <input class="form_field" type="text" name="key" placeholder="Manager Key">
-    <br>
-    <input class="form_field" type="submit">
-  </form>
+  </a>
 </div>
 
+<div class="container">
+
+<div class="edit">
+
+  <button id="add_manager" class="rounded_button" type="button" name="new_manager">make a new manager</button>
+
+  <div id="add_manager_form_container">
+    <form id="show-new-manager" class="manager_form hidden" action="/managers" method="post">
+      <div class="form_field_container">
+        <input class="form_field" type="text" name="name" placeholder="new manager name" >
+      </div>
+      <div class="form_field_container">
+        <input class="form_field" type="text" pattern="[0-9]{5}" name="zipcode" placeholder="zip Code">
+      </div>
+      <div class="form_field_container">
+        <input class="rounded_button" type="submit" value="submit">
+      </div>
+    </form>
+    </div>
+
+    <button id="view_manager" class="rounded_button" type="button" name="view_manager">view a manager</button>
+
+    <form id="view_manager_form" class="hidden" action="/managers" method="get">
+      <div class="form_field_container">
+        <input class="form_field" type="text" name="name" placeholder="manager name">
+      </div>
+      <div class="form_field_container">
+        <input class="form_field" type="text" name="key" placeholder="manager key">
+      </div>
+      <div class="form_field_container">
+        <input class="rounded_button" type="submit" value="submit">
+      </div>
+    </form>
+  </div>
 
 </div>

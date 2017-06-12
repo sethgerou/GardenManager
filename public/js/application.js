@@ -1,8 +1,11 @@
 $(document).ready(function() {
   $('#add_manager').on("click", function(event){
     event.preventDefault();
-      $('#show-new-manager').slideToggle("fast")
+      $('#show-new-manager').slideToggle("slow"),
+      $('#view_manager').slideToggle("slow"),
+      $('#add_manager').slideToggle("slow")
   })
+
   $('#add_manager_form_container').on("submit", function(event){
     event.preventDefault();
     newData = $(event.target).serialize()
@@ -11,13 +14,17 @@ $(document).ready(function() {
       type: 'post',
       data: newData
     }).done(function(response){
-      $('#add_manager_form_container').append(response)
+      $('#add_manager_form_container').html(response)
     })
   })
+
   $('#view_manager').on("click", function(event){
     event.preventDefault();
-    $('#view_manager_form').slideToggle("fast")
+    $('#view_manager_form').slideToggle("slow"),
+    $('#view_manager').slideToggle("slow"),
+    $('#add_manager').slideToggle("slow")
   })
+
   $('#view_manager_form').on("submit", function(event){
     event.preventDefault();
     selectManager = $(event.target).serialize()
@@ -33,6 +40,7 @@ $(document).ready(function() {
       $('#add_manager_form_container').html(response)
     })
   })
+
   $('.edit').on("click", "#edit_manager_settings", function(event){
     event.preventDefault();
     $.ajax({

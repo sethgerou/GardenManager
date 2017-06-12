@@ -1,20 +1,34 @@
 
 <div id="current-state">
-<br>
-<h1>Current Manager State</h1>
-<br>
-<h1>zipcode: <%= @manager.zipcode %></h1>
-<h1>mode: <%= @manager.mode %></h1>
-<h1>vent_open_temp: <%= @manager.roof_open_temp %></h1>
-<h1>vent_close_temp: <%= @manager.roof_close_temp %></h1>
+  <div class="heading">
+    <h1>Manager: <%= @manager.name %></h1>
+    <h3>current state:</h3>
+  </div>
 
-<% if @manager.logs %>
-   <h1>current temp: <%= @manager.logs.last.temp %></h1>
-   <h1>current humidity: <%= @manager.logs.last.humidity %></h1>
-   <h1>current ambient light: <%= @manager.logs.last.light %></h1>
-   <h1>current state: <%= @manager.logs.last.actuator_state %></h1>
-<% end %>
+  <div class="">
+    <h5>zipcode: <%= @manager.zipcode %></h5>
+  </div>
+  <div class="">
+  <h5>mode: <%= @manager.mode %></h5>
+  </div>
+  <div class="">
+    <h5>vent_open_temp: <%= @manager.roof_open_temp %></h5>
+  </div>
+  <div class="">
+    <h5>vent_close_temp: <%= @manager.roof_close_temp %></h5>
+  </div>
 
-<button id="edit_manager_settings" class="rounded_button" type="button" name="edit_settings">edit settings</button>
-<br><br>
+  <% if @manager.logs %>
+    <div class="">
+     <p>current temp: <%= @manager.logs.last.temp %></p>
+     <p>current humidity: <%= @manager.logs.last.humidity %></p>
+     <p>current ambient light: <%= @manager.logs.last.light %></p>
+     <p>current state: <%= @manager.logs.last.actuator_state %></p>
+   </div>
+  <% end %>
+
+  <div class="">
+    <button id="edit_manager_settings" class="rounded_button" type="button" name="edit_settings">edit settings</button>
+  </div>
+
 </div>
