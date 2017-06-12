@@ -1,6 +1,7 @@
 require 'securerandom'
 
 get '/managers/new' do
+  @manager = Manager.new()
   erb :'managers/new', layout: false
 end
 
@@ -10,8 +11,11 @@ post '/managers' do
                              key: SecureRandom.urlsafe_base64(5)
                              })
              Log.create({temp: 0, humidity: 0, light: 0, actuator_state: "closed", manager_id: @manager.id})
-
-  erb :'partials/_manager_info', layout: false
+  if @manager.valid?
+    erb :'partials/_manager_info', layout: false
+  else
+    erb :'managers/new', layout: false
+  end
 end
 
 get '/managers' do

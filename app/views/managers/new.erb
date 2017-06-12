@@ -1,8 +1,20 @@
-<form class="manager_form hidden" action="/managers" method="post">
-  <br>
-  <input class="form_field" type="text" name="name" placeholder="New Manager Name" >
-  <br>
-  <input class="form_field" type="text" pattern="[0-9]{5}" name="zipcode" placeholder="Zip Code">
-  <br>
-  <input class="form_field" type="submit">
-</form>
+<div class="">
+  <% if @manager.errors %>
+    <% @manager.errors.full_messages.each do |error| %>
+      <p>
+        <%= error %>
+      </p>
+    <% end %>
+  <% end %>
+  <form class="manager_form hidden" action="/managers" method="post">
+    <div>
+      <input class="form_field" type="text" name="name" placeholder="New Manager Name" >
+    </div>
+    <div>
+      <input class="form_field" type="text" pattern="[0-9]{5}" name="zipcode" placeholder="Zip Code">
+    </div>
+    <div>
+      <input class="rounded_button" type="submit">
+    </div>
+  </form>
+</div>
